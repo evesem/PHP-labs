@@ -31,57 +31,53 @@
 
 ```php
 <?php
-// Получаем текущий день недели (1 - понедельник, 7 - воскресенье)
-$day = date('N');
-?>
+$dayOfWeek = date('N');
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Расписание</title>
-</head>
-<body>
-<table border="1" cellpadding="10">
-    <tr>
-        <th>№</th>
-        <th>Фамилия Имя</th>
-        <th>График работы</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>John Styles</td>
-        <td>
-            <?php
-            if ($day == 1 || $day == 3 || $day == 5) {
-                echo "8:00 - 12:00";
-            } else {
-                echo "Нерабочий день";
-            }
-            ?>
-        </td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Jane Doe</td>
-        <td>
-            <?php
-            if ($day == 2 || $day == 4 || $day == 6) {
-                echo "12:00 - 16:00";
-            } else {
-                echo "Нерабочий день";
-            }
-            ?>
-        </td>
-    </tr>
-</table>
-</body>
-</html>
+echo "<table border='1' cellpadding='10' cellspacing='0'>";
+echo "<tr>";
+echo "<th>№</th>";
+echo "<th>Фамилия Имя</th>";
+echo "<th>График работы</th>";
+echo "</tr>";
+
+echo "<tr>";
+echo "<td>1</td>";
+echo "<td>John Styles</td>";
+echo "<td>";
+
+if ($dayOfWeek == 1 || $dayOfWeek == 3 || $dayOfWeek == 5) {
+    echo "8:00-12:00";
+} else {
+    echo "Нерабочий день";
+}
+
+echo "</td>";
+echo "</tr>";
+
+echo "<tr>";
+echo "<td>2</td>";
+echo "<td>Jane Doe</td>";
+echo "<td>";
+
+if ($dayOfWeek == 2 || $dayOfWeek == 4 || $dayOfWeek == 6) {
+    echo "12:00-16:00";
+} else {
+    echo "Нерабочий день";
+}
+
+echo "</td>";
+echo "</tr>";
+
+echo "</table>";
+
+echo "<br>Текущий день недели (1-Пн, 7-Вс): " . $dayOfWeek;
+?>
 ```
 
-2\. Циклы
+<img width="396" height="223" alt="image" src="https://github.com/user-attachments/assets/98d66f1d-bf00-4624-8e67-8e7bdf368f98" />
 
-=========
+
+2\. Циклы
 
 Исходный код
 
@@ -161,8 +157,6 @@ echo "<br>End of the loop: a = $a, b = $b";
 
 3\. Контрольные вопросы
 
-=======================
-
 3.1 В чем разница между циклами for, while и do-while?
 ------------------------------------------------------
 
@@ -213,7 +207,6 @@ echo "<br>End of the loop: a = $a, b = $b";
 3. Если условие ложно — цикл завершается
 
 Вывод
-=====
 
 В ходе лабораторной работы были изучены:
 
